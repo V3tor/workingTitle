@@ -1,0 +1,20 @@
+-implement MySQL Db
+-Local functions
+	-Db interfaces, queries
+	-listing directories
+	-sorting through files
+	-differentiate between TV and movies (based on directories ??)
+	-queries - variable searching through video media files using Db
+	-indexing videos in the Db.
+		-upon launch check existence of each media file in the Db.  If non-exixtent, add title into a place-holder table along with date.  Program will then search for the details online and fill in the Db.
+-command line interface v1.0 Done (oct 7, 2013)
+-configuration file v1.0 Done (oct 7, 2013)
+-gui.  Future work.
+-expand for other media files
+
+
+Ideas
+-start media player from python
+-play list -shuffle, etc
+
+-integrate django for db. maybe http as well?
