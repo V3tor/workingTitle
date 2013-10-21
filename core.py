@@ -1,4 +1,5 @@
 import sys
+import cmd
 import os.path
 from stat import *
 import argparse
@@ -16,7 +17,9 @@ class Core:
 		self.Functions = {}
 		self.DbAuth = {}
 		self.cmdLineArgs()
-		self.indexMedia()
+		
+		
+		self.Main()
 		
 		
 	def cmdLineArgs(self): #TODO add layer of transparency to ease extendibility
@@ -100,6 +103,28 @@ class Core:
 				os.rename(currentfile,newfile)
 				arg.append(newfile)
 	
+	
+	
+	def Main(self):
+		#main function.  Will work through command line prompts
+		#self.indexMedia()
+		comand = CmdLine()
+		introtext = 'Welcome!'
+		comand.cmdloop(introtext)
+		
+		
+		
+		
+class CmdLine(cmd.Cmd):
+	prompt = 'mediaManager>'
+	
+	def __init__(self):
+		cmd.Cmd.__init__()
+		pass
+	
+	def do_list(self, s):
+		pass
+		
 	
 	
 	
