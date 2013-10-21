@@ -1,12 +1,17 @@
 import sys
 import cmd
+import os
 import os.path
 from stat import *
 import argparse
 import ConfigParser
 import logging
 import logging.handlers
+import cmdline
 
+
+#TODO
+# - cmdline interface argument (default = enable)
 
 """Initial command line interface.  Will re-factor later"""
 
@@ -21,7 +26,7 @@ class Core:
 		
 		self.Main()
 		
-		
+	
 	def cmdLineArgs(self): #TODO add layer of transparency to ease extendibility
 		parser = argparse.ArgumentParser(description="Media organization")
 		parser.add_argument("-v","--verbose",action="store_true",help="print program information to the command line",dest="verbose")
@@ -108,25 +113,10 @@ class Core:
 	def Main(self):
 		#main function.  Will work through command line prompts
 		#self.indexMedia()
-		comand = CmdLine()
+		comand = cmdline.CmdLine()
 		introtext = 'Welcome!'
 		comand.cmdloop(introtext)
-		
-		
-		
-		
-class CmdLine(cmd.Cmd):
-	prompt = 'mediaManager>'
-	
-	def __init__(self):
-		cmd.Cmd.__init__()
-		pass
-	
-	def do_list(self, s):
-		pass
-		
-	
-	
+
 	
 if __name__ == '__main__':
     core = Core()
