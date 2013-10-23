@@ -109,11 +109,16 @@ class Core:
 				arg.append(newfile)
 	
 	
+	def printIndex(self, s):
+		print 'Printing Indexes'
 	
 	def Main(self):
 		#main function.  Will work through command line prompts
 		#self.indexMedia()
 		comand = cmdline.CmdLine()
+		comand.regf(p=self.printIndex)
+		comand.regf(p=self.printIndex)
+		print comand.getreg()
 		introtext = 'Welcome!'
 		comand.cmdloop(introtext)
 
