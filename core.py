@@ -112,13 +112,15 @@ class Core:
 	def printIndex(self, s):
 		print 'Printing Indexes'
 	
+	def printIndex2(self, s):
+		print 'Printing Indexes2'
+	
 	def Main(self):
 		#main function.  Will work through command line prompts
 		#self.indexMedia()
 		comand = cmdline.CmdLine()
-		comand.regf(p=self.printIndex)
-		comand.regf(p=self.printIndex)
-		print comand.getreg()
+		comand.rfunc(p=self.printIndex)
+		comand.rfunc(p=self.printIndex2)
 		introtext = 'Welcome!'
 		comand.cmdloop(introtext)
 
